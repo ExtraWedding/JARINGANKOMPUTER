@@ -13,7 +13,7 @@ class PinjamController extends Controller
     public function index()
     {
         $client = new Client();
-        $url = "http://127.0.0.1:8000/api/ruang";
+        $url = "http://192.168.129.62/api/ruang";
         $response =$client->request('GET',$url);
         $content = $response->getBody()->getContents();
         $contentArray = json_decode($content,true);
@@ -57,7 +57,7 @@ class PinjamController extends Controller
 
 
         $client = new Client();
-        $url = 'http://127.0.0.1:8000/api/ruang';
+        $url = 'http://192.168.129.62/api/ruang';
         $response =$client->request('POST',$url,[
             'headers' => ['Content-type'=>'application/json'],
             'body'=> json_encode($parameterAPI)
@@ -87,7 +87,7 @@ class PinjamController extends Controller
     {
         
         $client = new Client();
-        $url = "http://127.0.0.1:8000/api/ruang/$id";
+        $url = "http://192.168.129.62/api/ruang/$id";
         $response =$client->request('GET',$url);
         $content = $response->getBody()->getContents();
         $contentArray = json_decode($content,true);
@@ -127,7 +127,7 @@ class PinjamController extends Controller
 
 
         $client = new Client();
-        $url = "http://127.0.0.1:8000/api/ruang/$id";
+        $url = "http://192.168.129.62/api/ruang/$id";
         $response =$client->request('PUT',$url,[
             'headers' => ['Content-type'=>'application/json'],
             'body'=> json_encode($parameterAPI)
@@ -148,7 +148,7 @@ class PinjamController extends Controller
     public function destroy(string $id)
     {
         $client = new Client();
-        $url = "http://127.0.0.1:8000/api/ruang/$id";
+        $url = "http://192.168.129.62/api/ruang/$id";
         $response =$client->request('DELETE',$url);
         $content = $response->getBody()->getContents();
         $contentArray = json_decode($content,true);
