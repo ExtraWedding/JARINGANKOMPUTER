@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\BukuController;
+use App\Http\Controllers\Api\PinjamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +19,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('buku',[BukuController::class,'index']);
-Route::get('buku/{id}',[BukuController::class,'show']);
-Route::post('buku',[BukuController::class,'store']);
-Route::delete('buku/{id}',[BukuController::class,'destroy']);
+Route::get('ruang',[PinjamController::class,'index']);
+Route::get('ruang/{id}',[PinjamController::class,'show']);
+Route::post('ruang',[PinjamController::class,'store']);
+Route::put('ruang/{id}',[PinjamController::class,'update']);
+Route::delete('ruang/{id}',[PinjamController::class,'destroy']);
 
